@@ -8,3 +8,11 @@ if __name__=="__main__":
     files =  ["README.md",".env",".gitignore",".env.example","config.yml","main.py",
               "db/schema.sql","src/__init__.py","src/extract/__init__.py","src/transform/__init__.py",
               "src/load/__init__.py","src/utils/__init__.py","src/exceptions.py"]
+    
+    for folder in folders:
+        Path(folder).mkdir(parents=True,exist_ok=True)
+    print("Folders created successfully.")
+
+    for file in files:
+        Path(file).touch(exist_ok=True)
+    print("Files created successfully.")
